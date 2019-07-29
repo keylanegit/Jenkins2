@@ -1,6 +1,8 @@
 node {
    def mvnHome
-   stage('Preparation') { // for display purposes
+   stage('Preparation') { 
+      input message: 'geef input', ok: 'kaption', parameters: [choice(choices: ['loy', 'anl', 'nnl'], description: 'beschrijving', name: 'keuze')]
+      // for display purposes
       // Get some code from a GitHub repository
       git 'https://github.com/jglick/simple-maven-project-with-tests.git'
       // Get the Maven tool.
